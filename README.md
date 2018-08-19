@@ -1,6 +1,13 @@
-# WiFiScanEZ 20/08/2018
-WIFI Scanner by ESP8266 
+# WiFiScanEZ 
+
+WIFI Scanner by ESP8266
+
+20/08/2018
+
 +SSID
+
 +SingalStr
-+macaddress
+
++MAC
+
 +hidden
