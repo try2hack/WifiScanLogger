@@ -5,13 +5,12 @@
 */
 #include "ESP8266WiFi.h"
 
-
 void setup() {
   Serial.begin(115200);
 
   // Set WiFi to station mode and disconnect from an AP if it was previously connected
    WiFi.mode(WIFI_STA);
-   WiFi.begin("testbug2","12345678");
+   WiFi.begin("ssidname","passwd");
 
   while (WiFi.status() != WL_CONNECTED) 
   {     
@@ -45,10 +44,8 @@ void loop() {
       Serial.print(WiFi.RSSI(i));
       Serial.print(") ");
       Serial.print(WiFi.BSSIDstr(i));
-      Serial.println((WiFi.isHidden(i) == 0)?" ":" Hidden");
-      
-      
-      delay(10);
+      Serial.println((WiFi.isHidden(i) == 0)?" ":" Hidden");           
+      delay(1000);
     }
   }
   Serial.println("");
