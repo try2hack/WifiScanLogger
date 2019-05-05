@@ -1,7 +1,7 @@
 #include "ESP8266WiFi.h"
 #include <Wire.h>
 #include "SSD1306Wire.h"
-SSD1306Wire  display(0x3c, D3, D5);
+SSD1306Wire  display(0x3c, D3, D4);
 
 void setup() {
   Serial.begin(115200);
@@ -15,7 +15,7 @@ void loop() {
     Serial.println("nope");
   } else {
     for (int i = 0; i < n; ++i) {
-      if (WiFi.SSID(i) == "RTS") {
+      if (WiFi.SSID(i) == "testbugV2") {
         //        Serial.print("ESP8266 #");
         //        Serial.println(device);
         Serial.print(WiFi.SSID(i));
@@ -27,7 +27,7 @@ void loop() {
         display.drawString(0, 0, "SSID: " + String(WiFi.SSID(i)));
         display.drawString(0, 16, "RSSI: " + String(WiFi.RSSI(i)));
         display.drawString(0, 32, "MAC: " + String(WiFi.BSSIDstr(i)));
-        display.drawString(0, 48, "Range: " + String("m"));
+        display.drawString(0, 48, "Range: " + String("Z"));
         display.display();
       }
     }
